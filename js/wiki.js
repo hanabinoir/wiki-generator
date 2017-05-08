@@ -18,12 +18,12 @@ $(document).ready(function() {
                 console.log(json);
                 var pages = json.query.pages;
                 console.log(pages);
-                for (var page in pages) {
-                    console.log(page);
-                    $("#pages").append('<table>' +
-                        '<th>' + page.title + '</th>' +
+                for (var pageid in pages) {
+                    console.log(pages[pageid].title);
+                    $("#pages").append('<table class=\'page\'>' +
+                        '<tr><th>' + pages[pageid].title + '</th></tr>' +
                         '<tr>' +
-                            '<td> ' + page.extract + '</td>' +
+                            '<td> ' + pages[pageid].extract + '</td>' +
                         '</tr>' +
                     '</table>')
                 }

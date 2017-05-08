@@ -6,3 +6,8 @@ body {
 .main {
     margin-top: 150px;
 }
+
+.page {
+    margin-top: 5px;
+    text-align: left;
+}
