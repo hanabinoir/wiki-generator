@@ -6,7 +6,7 @@ $(document).ready(function() {
     $("#search").on('click', function(event) {
         event.preventDefault();
         /* Act on the event */
-        api = 'http://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrlimit=10&gsrsearch=';
+        api = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrlimit=10&gsrsearch=';
         keywords = $("#keywords").val();
         keywords = keywords.replace(/\s+/g, '+');
         console.log(keywords);
