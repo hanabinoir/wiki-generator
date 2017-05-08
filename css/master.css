@@ -8,6 +8,13 @@ body {
 }
 
 .page {
+    margin-left: 5px;
     margin-top: 5px;
     text-align: left;
+}
+
+.btn.page-title {
+    border-style: solid;
+    border-radius: 0;
+    border-left: 5px;
 }

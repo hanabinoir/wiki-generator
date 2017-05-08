@@ -1,7 +1,4 @@
 
-var api;
-var keywords;
-
 $(document).ready(function() {
     var page = 'http://en.wikipedia.org/?curid=';
 
@@ -17,20 +14,22 @@ $(document).ready(function() {
             Wiki();
         }
     });
-
-    $("th").on('click', '.btn', function(event) {
-        event.preventDefault();
-        /* Act on the event */
-        var pageid = $(this).attr('id');
-        page += pageid;
-        window.location = page;
-    });
 });
+
+// $(".btn").on('click', '.page-title', function(event) {
+//     event.preventDefault();
+//     /* Act on the event */
+//     var pageid = $(this).attr('id');
+//     console.log(pageid);
+//     page += pageid;
+//     window.location = page;
+// });
 
 function Wiki() {
     var crossorigin = "https://crossorigin.me/";
     var api = 'https://en.wikipedia.org/w/api.php?action=query&format=json&prop=extracts&generator=search&exsentences=1&exlimit=10&exintro=1&explaintext=1&gsrlimit=10&gsrsearch=';
     var keywords = $("#keywords").val();
+    var page = 'http://en.wikipedia.org/?curid=';
 
     $("#pages").html('');
     keywords = keywords.replace(/\s+/g, '+');
@@ -48,7 +47,7 @@ function Wiki() {
                 $("#pages").append(
                     // '<a href=' + page + pages[pageid].pageid + '>' +
                         '<table class=\'page\'>' +
-                            '<th class=\'btn\' id="' + pages[pageid].pageid + '"><b>' + pages[pageid].title + '</b></th>' +
+                            '<th><a class=\'btn page-title\' href="' +  page + pages[pageid].pageid + '" target="_blank"><b>' + pages[pageid].title + '</b></a></th>' +
                             '<tr>' +
                                 '<td>' + pages[pageid].extract + '</td>' +
                             '</tr>'+
